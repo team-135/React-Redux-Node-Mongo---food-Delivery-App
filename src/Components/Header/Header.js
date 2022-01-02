@@ -9,9 +9,11 @@ const Header = () => {
                 <nav className="navbar navbar-expand-lg navbar-light bg-light _hero_food_navbar">
                     <div className="container">
                         <div className="_logo_wrap">
-                            <a className="navbar-brand _logo" href="#0">
+                            <Link className="navbar-brand _logo" to='/'>
+
                                 <img src="assets/img/logo.svg" alt="Logo" />
-                            </a>
+                            </Link>
+
                         </div>
                         <button className="navbar-toggler _toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -19,26 +21,29 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav _hero_food_nav">
                                 <li className="nav-item _hero_food_nav_item">
-                                    <a className="nav-link _hero_food_nav_link" href="#0">Home</a>
+                                    <Link className="nav-link _hero_food_nav_link" to='/'>Home</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
-                                    <a className="nav-link _hero_food_nav_link" href="#0">Review</a>
+                                    <Link className="nav-link _hero_food_nav_link" to='/'>Review</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
-                                    <a className="nav-link _hero_food_nav_link" href="#0">About Us</a>
+                                    <Link className="nav-link _hero_food_nav_link" to='/'>About Us</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
-                                    <a className="nav-link _hero_food_nav_link" href="#0">Contact Us</a>
+                                    <Link className="nav-link _hero_food_nav_link" to='/'>Contact Us</Link>
                                 </li>
+
                             </ul>
                             <ul className="navbar-nav _hero_food_nav_right">
                                 <li className="nav-item _hero_food_nav_item">
                                     {
-                                        user.email ? <a className="nav-link _hero_food_nav_link _sign_up_btn" href="#0" onClick={logout}> {user.displayName} Sign Out</a> : <Link to='/login' className="nav-link _hero_food_nav_link _sign_up_btn" > Sign in</Link>
+                                        user.email ? <Link className="nav-link _hero_food_nav_link _sign_up_btn" to='/dashboard' > Dashboard</Link> : ""
                                     }
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
-
+                                    {
+                                        user.email ? <a className="nav-link _hero_food_nav_link _sign_up_btn" onClick={logout} >  Sign Out</a> : <Link to='/login' className="nav-link _hero_food_nav_link _sign_up_btn" > Sign in</Link>
+                                    }
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
                                     <a className="nav-link _hero_food_nav_btn _cart_btn" href="#0">

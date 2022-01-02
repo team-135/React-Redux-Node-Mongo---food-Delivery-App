@@ -11,6 +11,7 @@ import AuthProvider from './context/AuthProvider';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Pages/Login/Login';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
             <Route exact path="*">
               <PageNotFound></PageNotFound>
