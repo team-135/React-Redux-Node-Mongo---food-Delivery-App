@@ -11,7 +11,7 @@ import AuthProvider from './context/AuthProvider';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Pages/Login/Login';
-import Dashboard from './Pages/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 
@@ -22,6 +22,12 @@ function App() {
         <Router>
           <Header></Header>
           <Switch>
+            {/* <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute> */}
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
             <Route exact path="/">
               <Home></Home>
             </Route>
