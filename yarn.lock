@@ -7743,6 +7743,11 @@
     "regenerator-runtime" "^0.13.9"
     "whatwg-fetch" "^3.6.2"
 
+"react-bootstrap-drawer@^1.0.0":
+  "integrity" "sha512-H6YMnENP+FNTXajQKoPDkYE8mNgJQk2Es86c4ZZzdqTwjeRkQSwstItqa4OtFblV6gFAw2uY3T55E0MdRDciDg=="
+  "resolved" "https://registry.npmjs.org/react-bootstrap-drawer/-/react-bootstrap-drawer-1.0.0.tgz"
+  "version" "1.0.0"
+
 "react-bootstrap@^2.1.0":
   "integrity" "sha512-ZbEq8in6XzoDh4dyrANVwqeqrj1oRqL56unlBYzjsvdWPIaBP/B7qLMHCvnwuzpANwMrh/hSNpIocKn6rvOFIQ=="
   "resolved" "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-2.1.0.tgz"
