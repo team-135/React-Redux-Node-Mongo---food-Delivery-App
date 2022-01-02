@@ -23,7 +23,7 @@ const RegFrom = () => {
     }
     return (
         <div>
-            <div className='login-header'><h3>Sign Up </h3></div>
+            <div className='login-header'><h3 className='my-2'>Sign Up </h3></div>
             <FloatingLabel
                 controlId="floatingInput"
                 label="Name"
@@ -41,7 +41,7 @@ const RegFrom = () => {
             <FloatingLabel controlId="floatingPassword" label="Password">
                 <Form.Control onBlur={passwordhandel} type="password" placeholder="Password" />
             </FloatingLabel>
-            <Button variant="success" onClick={signup}>Sign Up</Button>
+            <Button variant="success" className='my-2' onClick={signup}>Sign Up</Button>
         </div>
     );
 };

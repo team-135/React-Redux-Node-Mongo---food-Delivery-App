@@ -3,6 +3,7 @@ import useFirebase from '../../hooks/useFirebase';
 import RegFrom from './RegFrom';
 import { Redirect, useHistory, useLocation } from 'react-router';
 import EmailLogin from './EmailLogin';
+import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
     const { signinUsinggoogle, user } = useFirebase();
     const location = useLocation();
@@ -29,12 +30,13 @@ const Login = () => {
                 </div>
                 <div className='col-md-6'>
                     <EmailLogin></EmailLogin>
-                    <button onClick={handelGooglelogin}>Login with google</button>
+                    <button className='btn btn-light' onClick={handelGooglelogin}><small>Log In With</small>  <FcGoogle /></button>
+
 
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 
