@@ -41,6 +41,7 @@ const useFirebase = () => {
             result => { }
         )
     };
+
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
@@ -51,6 +52,7 @@ const useFirebase = () => {
             setLoading(false);
         })
     }, []);
+
     const logout = () => {
         setLoading(true);
         signOut(auth).then(() => {
