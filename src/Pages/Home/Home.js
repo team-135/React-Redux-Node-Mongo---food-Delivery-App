@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
-import Food from './Food';
+import Foods from './Foods';
 import Hungry from './Hungry';
 import NearFood from './NearFood';
 import Others from './Others';
@@ -11,7 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <NearFood></NearFood>
             <Hungry></Hungry>
-            <Food></Food>
+            <Foods></Foods>
             <Others></Others>
         </div>
     );
