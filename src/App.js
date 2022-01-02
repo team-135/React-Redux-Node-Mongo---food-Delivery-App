@@ -15,8 +15,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import AboutUs from './Pages/AboutUs/AboutUs';
-import contactUs from './Pages/Contact-us/contactUs';
-
+import ContactUs from './Pages/ContactUs/ContactUs';
 function App() {
   return (
     <>
@@ -40,7 +39,7 @@ function App() {
               <AboutUs></AboutUs>
             </Route>
             <Route exact path="/contact-use">
-              <contactUs></contactUs>
+              <ContactUs></ContactUs>
             </Route>
             <Route exact path="/login">
               <Login></Login>
@@ -57,7 +56,7 @@ function App() {
             </PrivateRoute> */}
             <PrivateRoute exact path="/ProductDetails">
               <ProductDetails></ProductDetails>
-            </PrivateRoute> */}
+            </PrivateRoute>
             <Route exact path="*">
               <PageNotFound></PageNotFound>
             </Route>
