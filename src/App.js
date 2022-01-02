@@ -15,7 +15,6 @@ import Login from './Pages/Login/Login';
 function App() {
   return (
     <>
-
       <AuthProvider>
         <Router>
           <Header></Header>

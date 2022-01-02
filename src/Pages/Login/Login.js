@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useFirebase from '../../hooks/useFirebase';
+import RegFrom from './RegFrom';
+import { Redirect, useHistory, useLocation } from 'react-router';
+import EmailLogin from './EmailLogin';
 const Login = () => {
-    const { signinUsinggoogle } = useFirebase();
+    const { signinUsinggoogle, user } = useFirebase();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/login';
     const handelGooglelogin = () => {
         signinUsinggoogle().then(result => {
-            console.log('login ')
-
+            history.push(redirect_uri.pathname);
+            const user = result.user;
+            console.log(user)
         })
     }
+    useEffect(() => {
+        if (user.email) {
+            history.push('/');
+        }
+    }, user.email)
     return (
         <div className='container'>
             <div className='row '>
-                <div className='col-md-6'> <button>Login</button></div>
-                <div className='col-md-6'> <button onClick={handelGooglelogin}>Login with google</button></div>
+
+                <div className='col-md-6'>
+                    <RegFrom></RegFrom>
+                </div>
+                <div className='col-md-6'>
+                    <EmailLogin></EmailLogin>
+                    <button onClick={handelGooglelogin}>Login with google</button>
+
+                </div>
             </div>
 
         </div>
