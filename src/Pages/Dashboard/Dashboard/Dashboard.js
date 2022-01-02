@@ -5,11 +5,11 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import Test from '../Test/Test';
 import {
     Button,
-	Col,
-	Collapse,
-	Container,
-	Nav,
-	Row,
+    Col,
+    Collapse,
+    Container,
+    Nav,
+    Row,
 } from 'react-bootstrap';
 import {
     Switch,
@@ -20,22 +20,24 @@ import {
 import { Drawer } from 'react-bootstrap-drawer';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../../AdminRoute/AdminRoute';
+import Orders from '../Orders/Orders';
+import Addfoods from '../AddFoods/Addfoods';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-	const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const { admin, user, logOut } = useAuth();
 
-	const handleToggle = () => setOpen(!open);
+    const handleToggle = () => setOpen(!open);
 
     return (
         <>
             <Container fluid>
                 <Row className="flex-xl-nowrap">
-                    <Col xs={ 12 } md={ 3 } lg={ 2 } className="p-0">
+                    <Col xs={12} md={3} lg={2} className="p-0">
                         <Drawer>
-                            <Drawer.Toggle onClick={ handleToggle } />
-                            <Collapse in={ open }>
+                            <Drawer.Toggle onClick={handleToggle} />
+                            <Collapse in={open}>
                                 <Drawer.Overflow>
                                     <Drawer.ToC>
                                         <Nav.Link className="dashboard" as={Link} to="/">
@@ -47,14 +49,29 @@ const Dashboard = () => {
                                                 <i className="fas fa-circle"></i> Dashboard
                                             </Nav.Link>
                                         </Drawer.Nav>
-                                        {admin && 
-                                        <Drawer.Nav>
-                                            <Nav.Link className="nav-item" as={Link} to={`${url}/test`}>
-                                                <i className="fas fa-circle"></i> Test
-                                            </Nav.Link>
-                                        </Drawer.Nav>
+                                        <hr></hr>
+                                        {admin &&
+                                            <Drawer.Nav>
+                                                <Nav.Link className="nav-item" as={Link} to={`${url}/home`}>
+                                                    <i className="fas fa-circle"></i> Home
+                                                </Nav.Link>
+                                            </Drawer.Nav>
                                         }
-                                        {user.email && 
+                                        {admin &&
+                                            <Drawer.Nav>
+                                                <Nav.Link className="nav-item" as={Link} to={`${url}/orders`}>
+                                                    <i className="fas fa-circle"></i> orders
+                                                </Nav.Link>
+                                            </Drawer.Nav>
+                                        }
+                                        {admin &&
+                                            <Drawer.Nav>
+                                                <Nav.Link className="nav-item" as={Link} to={`${url}/add-food`}>
+                                                    <i className="fas fa-circle"></i> Add food Items
+                                                </Nav.Link>
+                                            </Drawer.Nav>
+                                        }
+                                        {user.email &&
                                             <Button onClick={logOut} className="btn-sm px-2 mt-3" variant="light">Logout</Button>
                                         }
                                     </Drawer.ToC>
@@ -62,7 +79,7 @@ const Dashboard = () => {
                             </Collapse>
                         </Drawer>
                     </Col>
-                    <Col xs={ 12 } md={ 9 } lg={ 10 }>
+                    <Col xs={12} md={9} lg={10}>
                         <Switch>
                             <Route exact path={path}>
                                 <DashboardHome></DashboardHome>
@@ -70,8 +87,14 @@ const Dashboard = () => {
                             <Route path={`${path}/dashboardHome`}>
                                 <DashboardHome></DashboardHome>
                             </Route>
-                            <AdminRoute exact path={`${path}/test`}>
+                            <AdminRoute exact path={`${path}/home`}>
                                 <Test></Test>
+                            </AdminRoute>
+                            <AdminRoute exact path={`${path}/orders`}>
+                                <Orders></Orders>
+                            </AdminRoute>
+                            <AdminRoute exact path={`${path}/add-food`}>
+                                <Addfoods></Addfoods>
                             </AdminRoute>
                         </Switch>
                     </Col>

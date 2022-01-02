@@ -27,9 +27,9 @@ function App() {
             {/* <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute> */}
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/">
               <Home></Home>
             </Route>
@@ -45,9 +45,9 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <PrivateRoute exact path="/dashboard">
+            {/* <PrivateRoute exact path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute exact path="/ProductDetails">
               <ProductDetails></ProductDetails>
             </PrivateRoute>
