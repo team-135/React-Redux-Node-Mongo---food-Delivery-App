@@ -31,12 +31,15 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
+            <Route exact path='/ProductDetails'>
+              <ProductDetails></ProductDetails>
+            </Route>
             <PrivateRoute exact path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <PrivateRoute exact path="/ProductDetails">
+            {/* <PrivateRoute exact path="/ProductDetails">
               <ProductDetails></ProductDetails>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <Route exact path="*">
               <PageNotFound></PageNotFound>
             </Route>
