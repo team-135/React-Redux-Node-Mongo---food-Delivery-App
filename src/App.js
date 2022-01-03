@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
+  Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import PageNotFound from './Pages/PageNotFound';
@@ -23,9 +22,6 @@ function App() {
         <Router>
           <Header></Header>
           <Switch>
-            {/* <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute> */}
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
@@ -44,19 +40,15 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route exact path='/ProductDetails'>
+            <Route exact path='/product-details'>
               <ProductDetails></ProductDetails>
             </Route>
             <PrivateRoute exact path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
             {/* <PrivateRoute exact path="/ProductDetails">
-            {/* <PrivateRoute exact path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute> */}
-            <PrivateRoute exact path="/ProductDetails">
               <ProductDetails></ProductDetails>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <Route exact path="*">
               <PageNotFound></PageNotFound>
             </Route>
