@@ -1,17 +1,27 @@
 import './ProductDetails.css'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Rating from "react-rating";
+import { useParams } from 'react-router';
 
 const ProductDetails = () => {
+    const [product, setProduct] = useState({});
+    const { id } = useParams();
+
+    useEffect(() => {
+        const url = `https://food-dalivary.herokuapp.com/singel-product/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProduct(data));
+    }, [id]);
+
     return (
         <div className='container row mx-auto'>
             <div className="col-md-6  ">
-                <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395__480.jpg" alt="" className='d-block p-2' />
+                <img src={product.img} alt="" className='d-block p-2' />
             </div>
             <div className="col-md-6  ">
                 <div>
-                    <h3>Grilled Zucchini and Barley Salad</h3>
-                    <small>with <b><i>Garlic Costinies</i></b></small>
+                    <h3>{product.title}</h3>
                 </div>
                 <div className='p-2'>
                     <Rating
@@ -21,12 +31,14 @@ const ProductDetails = () => {
                         className="text-warning d-block py-2"
                         readonly
                     ></Rating>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, suscipit. Nesciunt esse, vel impedit dicta commodi ipsum beatae ex deleniti placeat voluptatem maxime explicabo excepturi magni harum temporibus asperiores. Quam tempora neque in tenetur commodi molestias ipsum illo impedit aperiam, molestiae beatae dolore voluptas, dicta ipsa omnis sed inventore nam.</p>
+                    <p>
+                        {product.description}
+                    </p>
 
                 </div>
                 <div className='d-flex '>
                     <h6 className='me-5'>Price</h6>
-                    <h6 className='ms-5'>250$</h6>
+                    <h6 className='ms-5'>${product.price}</h6>
 
                 </div>
                 <div className='mt-2'>
