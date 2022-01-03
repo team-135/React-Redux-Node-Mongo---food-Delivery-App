@@ -1,13 +1,13 @@
 import React from 'react';
 
 const Food = ({ product }) => {
-	const { name, prices, image, description } = product;
+	const { title, price, img, description } = product;
 	return (
 		<>
 			<div className="col-12 col-md-6 col-lg-6 col-xl-4">
 				<div className="_ftre_fd_dlvry2_crd">
 					<div className="_ftre_fd_dlvry2_pic">
-						<img src={image} alt="" />
+						<img src={img} alt="" />
 					</div>
 					<div className="_ftre_fd_dlvry2_inr">
 						<ul className="_ftre_fd_dlvry2_ul">
@@ -38,7 +38,7 @@ const Food = ({ product }) => {
 							</li>
 						</ul>
 						<p className="_ftre_fd_dlvry2_crd_titl">
-							{name}
+							{title}
 						</p>
 						<p className="_ftre_fd_dlvry2_crd_txt">
 							{description}
@@ -46,7 +46,7 @@ const Food = ({ product }) => {
 						<div className="_ftre_fd_dlvry2_btm">
 							<div className="_ftre_fd_dlvry2_btm_lft">
 								<p className="_ftre_fd_dlvry2_btm_txt">
-									$ {prices[0].medium}
+									$ {price}
 								</p>
 							</div>
 							<div className="_ftre_fd_dlvry2_btm_r8">
