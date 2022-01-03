@@ -5,7 +5,7 @@ import { Redirect, useHistory, useLocation } from 'react-router';
 import EmailLogin from './EmailLogin';
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
-    const { signinUsinggoogle, user } = useFirebase();
+    const { signinUsinggoogle, user, saveUser } = useFirebase();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/login';
@@ -13,7 +13,7 @@ const Login = () => {
         signinUsinggoogle().then(result => {
             history.push(redirect_uri.pathname);
             const user = result.user;
-            console.log(user)
+            saveUser(user.email, user.displayName, 'PUT');
         })
     }
     useEffect(() => {

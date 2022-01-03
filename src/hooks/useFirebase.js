@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
-    const [admin, setAdmin] = useState(true);
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -27,6 +27,7 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 setUser(user);
                 setUserName(name);
+                saveUser(email, name, 'POST');
                 window.location.reload();
             })
             .catch((error) => {
@@ -56,7 +57,7 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://food-dalivary.herokuapp.com/users-cehck/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -69,11 +70,29 @@ const useFirebase = () => {
             setError(error)
         }).finally(() => setLoading(false));
     }
+    const saveUser = (email, displauName, method) => {
+        const user = { email, displauName };
+        fetch('https://food-dalivary.herokuapp.com/users', {
+            method: method, // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', user);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
     return {
         user,
         admin,
         error,
         loading,
+        saveUser,
         signinwithpassword,
         registerNewUser,
         logout,
