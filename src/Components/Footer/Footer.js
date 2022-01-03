@@ -9,7 +9,8 @@ const Footer = () => {
 					<div className="col-12 col-md-3 col-lg-3">
 						<div className="_fd_dlvry_ftr_lft">
 							<a href="#">
-                              <img src="assets/img/fd_dlvry_ftr_logo.svg" alt="" /></a>
+                              <img src="/assets/img/fd_dlvry_ftr_logo.svg" alt="" />
+							</a>
 							<p className="_fd_dlvry_ftr_lft_txt">
 								Retail food delivery is a courier service in which a restaurant, store, or independent food-delivery
 							</p>

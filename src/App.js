@@ -15,6 +15,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import AllProduct from './Pages/AllProduct/AllProduct';
 function App() {
   return (
     <>
@@ -40,8 +41,11 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route exact path='/product-details/:id'>
+            <PrivateRoute exact path='/product-details/:id'>
               <ProductDetails></ProductDetails>
+            </PrivateRoute>
+            <Route exact path="/all-products">
+              <AllProduct></AllProduct>
             </Route>
             <Route exact path="*">
               <PageNotFound></PageNotFound>
