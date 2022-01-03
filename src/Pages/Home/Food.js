@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Food = ({ product }) => {
-	const { title, price, img, description } = product;
+	const { _id, title, price, img, description } = product;
 	return (
 		<>
 			<div className="col-12 col-md-6 col-lg-6 col-xl-4">
@@ -50,7 +51,9 @@ const Food = ({ product }) => {
 								</p>
 							</div>
 							<div className="_ftre_fd_dlvry2_btm_r8">
+							<Link to={`/product-details/${_id}`}>
 								<button className='btn btn-info btn-sm'>Order Now</button>
+							</Link>
 							</div>
 						</div>
 					</div>
