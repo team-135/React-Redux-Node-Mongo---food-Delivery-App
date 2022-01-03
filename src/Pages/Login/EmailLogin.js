@@ -27,7 +27,7 @@ const EmailLogin = () => {
     }
     return (
         <div>
-            <div className='login-header'><h3>Sign In </h3></div>
+            <div className='login-header'><h3 className='my-2'>Sign In </h3></div>
             <FloatingLabel
                 controlId="floatingInput"
                 label="Email address"
@@ -38,7 +38,7 @@ const EmailLogin = () => {
             <FloatingLabel controlId="floatingPassword" label="Password">
                 <Form.Control onBlur={getpassword} type="password" placeholder="Password" />
             </FloatingLabel>
-            <Button variant="success" onClick={loginHandeler}>Sign in</Button>
+            <Button variant="success" className='my-2' onClick={loginHandeler}>Sign in</Button>
         </div>
     );
 };
