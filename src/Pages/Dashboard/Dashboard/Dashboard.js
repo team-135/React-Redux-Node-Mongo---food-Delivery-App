@@ -48,6 +48,11 @@ const Dashboard = () => {
                                                 <i className="fas fa-circle"></i> Dashboard
                                             </Nav.Link>
                                         </Drawer.Nav>
+                                        <Drawer.Nav>
+                                            <Nav.Link className="nav-item" as={Link} to={`${url}/myorders`}>
+                                                <i className="fas fa-circle"></i> My Orders
+                                            </Nav.Link>
+                                        </Drawer.Nav>
                                         <hr></hr>
                                         {admin &&
                                             <Drawer.Nav>
@@ -85,6 +90,9 @@ const Dashboard = () => {
                             </Route>
                             <Route path={`${path}/dashboardHome`}>
                                 <DashboardHome></DashboardHome>
+                            </Route>
+                            <Route path={`${path}/myorders`}>
+                                <Orders></Orders>
                             </Route>
                             <AdminRoute exact path={`${path}/home`}>
                                 <Test></Test>
