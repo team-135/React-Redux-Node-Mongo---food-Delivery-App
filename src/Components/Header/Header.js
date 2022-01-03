@@ -11,7 +11,7 @@ const Header = () => {
                         <div className="_logo_wrap">
                             <Link className="navbar-brand _logo" to='/'>
 
-                                <img src="assets/img/logo.svg" alt="Logo" />
+                                <img src="/assets/img/logo.svg" alt="Logo" />
                             </Link>
                         </div>
                         <button className="navbar-toggler _toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +23,13 @@ const Header = () => {
                                     <Link className="nav-link _hero_food_nav_link" to='/'>Home</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
-                                    <Link className="nav-link _hero_food_nav_link" to='/about-us'>About Us</Link>
+                                    <Link className="nav-link _hero_food_nav_link" to='/all-products'>All Products</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
                                     <Link className="nav-link _hero_food_nav_link" to='/'>Review</Link>
+                                </li>
+                                <li className="nav-item _hero_food_nav_item">
+                                    <Link className="nav-link _hero_food_nav_link" to='/about-us'>About Us</Link>
                                 </li>
                                 <li className="nav-item _hero_food_nav_item">
                                     <Link className="nav-link _hero_food_nav_link" to='/contact-use'>Contact Us</Link>
