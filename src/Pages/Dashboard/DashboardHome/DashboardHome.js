@@ -7,7 +7,8 @@ const DashboardHome = () => {
         <section id="appointment" className="appointment section-bg">
             <div className="container" data-aos="fade-up">
                 <div>
-                    <h2>Welcome to Dashboard</h2>
+                    <h2>Welcome to Dashboard all</h2>
+
                 </div>
             </div>
         </section>

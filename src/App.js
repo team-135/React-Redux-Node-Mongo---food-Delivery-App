@@ -16,6 +16,7 @@ import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import AllProduct from './Pages/AllProduct/AllProduct';
+import OrderPayments from './Pages/Payment/OrderPayments';
 function App() {
   return (
     <>
@@ -43,6 +44,9 @@ function App() {
             </Route>
             <PrivateRoute exact path='/product-details/:id'>
               <ProductDetails></ProductDetails>
+            </PrivateRoute>
+            <PrivateRoute exact path='/product-order/:id'>
+              <OrderPayments></OrderPayments>
             </PrivateRoute>
             <Route exact path="/all-products">
               <AllProduct></AllProduct>

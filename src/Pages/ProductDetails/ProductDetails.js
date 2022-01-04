@@ -2,6 +2,7 @@ import './ProductDetails.css'
 import React, { useEffect, useState } from 'react';
 import Rating from "react-rating";
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const ProductDetails = () => {
     const [product, setProduct] = useState({});
@@ -42,7 +43,7 @@ const ProductDetails = () => {
 
                 </div>
                 <div className='mt-2'>
-                    <button className='btn btn-danger w-75 d-block mx-auto py-2'>Add To Cart</button>
+                    <Link to={`/product-order/${id}`} className='btn btn-danger w-75 d-block mx-auto py-2'>Add To Cart</Link>
                 </div>
 
             </div>

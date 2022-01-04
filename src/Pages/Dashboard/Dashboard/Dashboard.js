@@ -22,6 +22,7 @@ import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../../AdminRoute/AdminRoute';
 import Orders from '../Orders/Orders';
 import Addfoods from '../AddFoods/Addfoods';
+import Payments from '../Payments/Payments';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -51,6 +52,11 @@ const Dashboard = () => {
                                         <Drawer.Nav>
                                             <Nav.Link className="nav-item" as={Link} to={`${url}/myorders`}>
                                                 <i className="fas fa-circle"></i> My Orders
+                                            </Nav.Link>
+                                        </Drawer.Nav>
+                                        <Drawer.Nav>
+                                            <Nav.Link className="nav-item" as={Link} to={`${url}/payments`}>
+                                                <i className="fas fa-circle"></i> Payments
                                             </Nav.Link>
                                         </Drawer.Nav>
                                         <hr></hr>
@@ -90,6 +96,9 @@ const Dashboard = () => {
                             </Route>
                             <Route path={`${path}/dashboardHome`}>
                                 <DashboardHome></DashboardHome>
+                            </Route>
+                            <Route path={`${path}/payments`}>
+                                <Payments></Payments>
                             </Route>
                             <Route path={`${path}/myorders`}>
                                 <Orders></Orders>
