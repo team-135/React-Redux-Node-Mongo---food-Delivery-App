@@ -23,6 +23,7 @@ import AdminRoute from '../../../AdminRoute/AdminRoute';
 import Orders from '../Orders/Orders';
 import Addfoods from '../AddFoods/Addfoods';
 import Payments from '../Payments/Payments';
+import AllOrders from '../AllOrders/AllOrders';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -107,7 +108,7 @@ const Dashboard = () => {
                                 <Test></Test>
                             </AdminRoute>
                             <AdminRoute exact path={`${path}/orders`}>
-                                <Orders></Orders>
+                                <AllOrders></AllOrders>
                             </AdminRoute>
                             <AdminRoute exact path={`${path}/add-food`}>
                                 <Addfoods></Addfoods>
